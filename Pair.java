@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Pair <Y,N>{
    private Y key;
@@ -7,7 +7,7 @@ public class Pair <Y,N>{
            this.key = key;
            this.value = value;
    }
-   
+
 
    public void setKey (Y key){ //update key value
        key = this.key;
@@ -25,6 +25,24 @@ public class Pair <Y,N>{
        return value;
    }
 
-
+   public static <Y, N> Pair[] getRep_FelixCatriona(Pair[] pa){
+       ArrayList<Y> year = new ArrayList<>();
+       ArrayList<N> name = new ArrayList<>();
+        
+       
+       for (int i = 0; i < pa.length; i ++){
+           if(year.contains(pa[i].getKey()) == false){
+               year.add((Y) pa[i].getKey());
+               name.add((N) pa[i].getValue());
+           }    
+       }
+       Pair[] repArray = new Pair[year.size()];
+       for(int i=0; i< year.size(); i++){
+            Pair<Y, N> pair = new Pair<>(year.get(i), name.get(i));
+            repArray[i] = pair;
+       }
+       return repArray;
+   }
+   
 }
 

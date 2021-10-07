@@ -38,7 +38,13 @@ public class MyStack <E>{
     
 
     public int search(Object anyName){
-        return 1;
+        int counter =0;
+        for (int i=objectArray.length -1;i>=0; i--){
+            counter++;
+            if (objectArray[i].equals(anyName)){
+                return counter; 
+            } 
+        }
     } 
     
     public String toString(){

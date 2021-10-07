@@ -3,7 +3,7 @@ public class StackDemo(){
    public static void main(String[] args){
        printHeader();
        MyStack stack = new MyStack(0);
-       stack.empty();
+       
    }
    
    //when called will print the header

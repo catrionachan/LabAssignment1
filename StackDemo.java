@@ -9,16 +9,19 @@ public class StackDemo{
            stack.push(array[i]);
        }
        System.out.println(stack.toString());
-       System.out.println(stack.peek());
+       String studentNumString = (String)stack.peek();
+       System.out.println(studentNumString);
+
        String distance = (stack.search("251135537")) +"";
        System.out.println(distance);
-        int studentNum= Integer.parseInt(distance);
+       int studentNum= Integer.parseInt(studentNumString);
+       System.out.println(studentNum);
        int lastNum = studentNum%10;
        int firstNum = studentNum/1000000;
-       //System.out.println(lastNum);
-       //System.out.println(firstNum);
+       System.out.println(lastNum);
+       System.out.println(firstNum);
        double avg = ((double)firstNum+lastNum)/2;
-       //System.out.println(avg);
+       System.out.println(avg);
 
 
 

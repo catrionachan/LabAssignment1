@@ -45,6 +45,7 @@ public class MyStack <E>{
                 return counter; 
             } 
         }
+        return counter;
     } 
     
     public String toString(){

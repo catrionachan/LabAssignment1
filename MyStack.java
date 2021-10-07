@@ -28,6 +28,7 @@ public class MyStack <E>{
         E topValue = (E)objectArray[objectArray.length - 1];
         Object[] newArray = new Object[objectArray.length -1]; 
         System.arraycopy(objectArray,0, newArray, 0, newArray.length-1);
+        objectArray = newArray;
         return topValue;
     }
     

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 
 public class MyStack <E>{
     private Object[] objectArray;
@@ -31,6 +32,8 @@ public class MyStack <E>{
     
 
     public E push(E anyName){
+        Object [] newArray = new Object[objectArray.length +1];
+        java.lang.System.arraycopy(objectArray,0, newArray, 0);
         
 
         return (E) objectArray;

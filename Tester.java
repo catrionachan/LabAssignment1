@@ -15,34 +15,33 @@ public class Tester {
            Pair<Integer, String> pair = new Pair<Integer, String>(yearOfStudy.get(i), names.get(i));
            pairing[i] = pair;
         }
-        Pair.getRep_FelixCatriona(pairing);
         Scanner scan = new Scanner(System.in);
         
         int input;
         String stringInput;
-        System.out.print("\nFrom which year you are looking for the names of the student leaders: ");
+        System.out.print("\nFrom which year you are looking for the names of the student leaders: "); //gets the user input for year
         while (true) {
             try {
                 input = scan.nextInt();
-                if (input >=2 && input <=4){
+                if (input >=2 && input <=4){ //determines if input is an integer within 2 and 4
                     int count=0;
-                    String list="";
-                    Integer keyInput = input;
+                    String list=""; //a string to hold all the pair values
+                    Integer keyInput = input;//changes the input for key
                     for (int i =0; i< pairing.length; i++){ //prints out the names of people in the academic year of user input
                         if (pairing[i].getKey() == keyInput){
                             count++;
-                            list += (pairing[i].getValue() +"\n");
+                            list += (pairing[i].getValue() +"\n"); //gets the name based on the pairs that have the year value
                         }
 
                     }
-                    System.out.printf("\nWe found %d student leader(s) from year %d and here is the list:\n%s",count,input, list);
+                    System.out.printf("\nWe found %d students from year %d and here is the list:\n%s",count,input, list);//print out the list and count of students from the year
                     
                     scan.nextLine();
                     
                     System.out.print("\nDo you want to Continue (y/n):"); // asks user to continue the program
                     stringInput = scan.nextLine();
-                    if (stringInput.equals("n")){
-                            System.out.println("\nHere is the list of the class-reps.....");
+                    if (stringInput.equals("n")){//determine if input is n to break out of the loop and print the code
+                            System.out.println("\nHere is the list of the class-reps....."); //prints the class reps 
                             Pair[] arr = Pair.getRep_FelixCatriona(pairing);
                             for (int i = 0 ; i < arr.length; i++){
                                 System.out.println(arr[i].getKey()+" - "+arr[i].getValue());
@@ -52,8 +51,8 @@ public class Tester {
                     while (!stringInput.equals("y")){ //determine if it is a valid entry
                         System.out.print("\nInvalid Entry! Enter either y or n: ");
                         stringInput = scan.nextLine();
-                        if (stringInput.equals("n")){
-                            System.out.println("\nHere is the list of the class-reps.....");
+                        if (stringInput.equals("n")){ //checks if input is n and breaks system
+                            System.out.println("\nHere is the list of the class-reps.....");//prints class list
                                 Pair[] arr = Pair.getRep_FelixCatriona(pairing);
                                 for (int i = 0 ; i < arr.length; i++){
                                     System.out.println(arr[i].getKey()+" - "+arr[i].getValue());
@@ -61,7 +60,7 @@ public class Tester {
                                 break; //if user input a correct value, break out of the while loop
                             }
                     }
-                    if (stringInput.equals("n")){
+                    if (stringInput.equals("n")){ //checks for 
                         System.out.println("\nHere is the list of the class-reps.....");
                         Pair[] arr = Pair.getRep_FelixCatriona(pairing);
                         for (int i = 0 ; i < arr.length; i++){

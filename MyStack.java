@@ -59,7 +59,7 @@ public class MyStack <E>{
         if (empty()==true) {
             return "The stack is Empty! The stack: " + Arrays.toString(objectArray);
         }else{
-            return Arrays.toString(objectArray);
+            return "The stack: "+ Arrays.toString(objectArray);
         }
     }
 }

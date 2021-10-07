@@ -70,18 +70,7 @@ public class Tester {
                         break; //if user input a correct value, break out of the while loop
                     }
                     System.out.print("\nFrom which year you are looking for the names of the student leaders: ");
-                    /*System.out.println("Do you want to continue? [y or n]");
-                        stringInput = scan.nextLine();
-                        if (stringInput.equals("y") || stringInput.equals("n")){
-                            if(stringInput.equals("n")){
-                                
-                            }
-                        }else{
-                            System.out.println("Invalid Entry! Enter y or n: ");
-                            scan.nextLine();
-                        }
-                        
-                    */     
+                   
                 }else{
                     throw new Exception();
                 }
@@ -94,50 +83,7 @@ public class Tester {
             
         }
         printFooter();
-       
-       /*System.out.println("Let’s check out the leaders from different year of program.");//ask user for integer
-       Scanner input = new Scanner (System.in); //Set keyboard as input
-       
-
-
-       while (true){
-           System.out.println("From which academic year would you like to list the names of the leaders:"); //asks user for year in integer
-           int num = input.nextInt();
-           while (num <2 || num >4) { //determine if integer is within range otherwise will prompt for user input another integer
-               System.out.println("Invalid Entry! Enter a valid number between 2 and 4: ");
-               num = input.nextInt();
-           }
-           Integer key = num;
-           int count =0;
-           String list="";
-           for (int i =0; i< pairing.length; i++){ //prints out the names of people in the academic year of user input
-
-               if (pairing[i].getKey() == key){
-                   count++;
-                   list += (pairing[i].getValue() +"\n");
-               }
-
-           }
-           System.out.printf("We found %d student leader(s) from year 3 and here is the list: %s\n", count, list);
-           input.nextLine();
-           System.out.println("Do you want to Continue (y/n):"); // asks user to continue the program
-           String ans = input.nextLine();
-           if (ans.equals("n")){
-               break;
-           }
-           while (!ans.equals("y")){ //determine if it is a valid entry
-               System.out.println("Invalid Entry! Enter either y or n: ");
-               ans = input.nextLine();
-               if (ans.equals("n") || ans.equals("y")){
-                   break; //if user input a correct value, break out of the while loop
-               }
-           }
-           if (ans.equals("n")){
-               break;
-           }
        }
-*/
-   }
 
    //when called will print the header
    public static void printHeader (){

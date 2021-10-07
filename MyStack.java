@@ -33,9 +33,9 @@ public class MyStack <E>{
 
     public E push(E anyName){
         Object [] newArray = new Object[objectArray.length +1];
-        java.lang.System.arraycopy(objectArray,0, newArray, 0);
-        
-
+        System.arraycopy(objectArray,0, newArray, 0, newArray.length-1);
+        newArray[objectArray.length] = anyName;
+        objectArray = newArray;
         return (E) objectArray;
     } 
     

@@ -4,6 +4,11 @@ public class StackDemo{
        printHeader();
        MyStack stack = new MyStack(0);
        System.out.println(stack.toString());
+       String[] array = {"251167970", "Zheng", "Felix", "251135537","Chan", "Catriona"};
+       for (i)
+       push(array);
+
+
        
    }
    

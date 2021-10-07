@@ -23,8 +23,10 @@ public class MyStack <E>{
 
     public E pop(){
         
-        E topValue = objectArray[objectArray.length - 1];
+        E topValue = (E)objectArray[objectArray.length - 1];
+        objectArray = new Object[objectArray.length -1];
 
+        return topValue;
     }
     
 
@@ -36,10 +38,14 @@ public class MyStack <E>{
     
 
     public int search(Object anyName){
-        
+        return 1;
     } 
     
     public String toString(){
-        return Arrays.toString(objectArray);
+        if (empty()==true) {
+            return "The stack is Empty! The stack: " + Arrays.toString(objectArray);
+        }else{
+            return Arrays.toString(objectArray);
+        }
     }
 }

@@ -1,8 +1,9 @@
-public class StackDemo(){
+public class StackDemo{
 
    public static void main(String[] args){
        printHeader();
        MyStack stack = new MyStack(0);
+       System.out.println(stack.toString());
        
    }
    

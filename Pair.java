@@ -7,6 +7,7 @@ public class Pair <Y,N>{
            this.key = key;
            this.value = value;
    }
+   
 
    public void setKey (Y key){ //update key value
        key = this.key;

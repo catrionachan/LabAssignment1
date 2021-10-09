@@ -25,23 +25,25 @@ public class Pair <Y,N>{
        return value;
    }
 
-   public static <Y, N> Pair[] getRep_FelixCatriona(Pair[] pa){
-       ArrayList<Y> year = new ArrayList<>();
-       ArrayList<N> name = new ArrayList<>();
+   public static <Y, N> Pair[] getRep_FelixCatriona(Pair[] pa){ //method to get the year representatives with a Pair object array passed
+        //Create two array lists for the year of the representative and name using Generic object type
+        ArrayList<Y> year = new ArrayList<>(); 
+        ArrayList<N> name = new ArrayList<>();
         
-       
+       //add the year and name to corresponding lists from the array parameter
        for (int i = 0; i < pa.length; i ++){
            if(year.contains(pa[i].getKey()) == false){
                year.add((Y) pa[i].getKey());
                name.add((N) pa[i].getValue());
            }    
        }
+       //Create Pair object based on the values stored in the Array Lists
        Pair[] repArray = new Pair[year.size()];
        for(int i=0; i< year.size(); i++){
             Pair<Y, N> pair = new Pair<>(year.get(i), name.get(i));
             repArray[i] = pair;
        }
-       return repArray;
+       return repArray; //returns the Pair object array  
    }
    
 }

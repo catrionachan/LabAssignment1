@@ -2,26 +2,24 @@
 import java.util.*;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalTime;  
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Tester {
    public static void main(String[] args) {
        printHeader(); // print header
        ArrayList<Integer> yearOfStudy = new ArrayList(Arrays.asList(2,3,4,3,2,2)); //creates Array List for integers
-       ArrayList<String> names = new ArrayList(Arrays.asList("Harry", "Lavender", "Ron", "Hermione", "Luna","Vincent"));//creates arrayList for names
+       ArrayList<String> names = new ArrayList(Arrays.asList("Harry", "Lavender", "Ron", "Hermione", "Luna","Vincent"));//creates arrayList for names of students
        Pair[] pairing = new Pair[yearOfStudy.size()]; //Creates arrays of Pair objects
        for(int i=0; i< yearOfStudy.size();i++){ // for loop to populate the array based on year and name from array lists
-           Pair<Integer, String> pair = new Pair<Integer, String>(yearOfStudy.get(i), names.get(i));
+           Pair<Integer, String> pair = new Pair<Integer, String>(yearOfStudy.get(i), names.get(i)); //create a pair object with the year and name from the arrayList yearOfStudy and names
            pairing[i] = pair;
         }
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in); //instantiate input Scanner for keyboard
         
         int input;
         String stringInput;
         System.out.print("\nFrom which year you are looking for the names of the student leaders: "); //gets the user input for year
         while (true) {
-            try {
+            try {//try catch block to obtain a list of students of a specified year
                 input = scan.nextInt();
                 if (input >=2 && input <=4){ //determines if input is an integer within 2 and 4
                     int count=0;
@@ -42,33 +40,28 @@ public class Tester {
                     stringInput = scan.nextLine();
                     if (stringInput.equals("n")){//determine if input is n to break out of the loop and print the code
                             System.out.println("\nHere is the list of the class-reps....."); //prints the class reps 
-                            Pair[] arr = Pair.getRep_FelixCatriona(pairing);
+                            Pair[] arr = Pair.getRep_FelixCatriona(pairing); //create an array of Pair objects of year representatives 
                             for (int i = 0 ; i < arr.length; i++){
-                                System.out.println(arr[i].getKey()+" - "+arr[i].getValue());
+                                System.out.println(arr[i].getKey()+" - "+arr[i].getValue()); //prints out the year and names of student representatives
                             }
                             break; //if user input a correct value, break out of the while loop
                         }
                     while (!stringInput.equals("y")){ //determine if it is a valid entry
                         System.out.print("\nInvalid Entry! Enter either y or n: ");
                         stringInput = scan.nextLine();
-                        if (stringInput.equals("n")){ //checks if input is n and breaks system
-                            System.out.println("\nHere is the list of the class-reps.....");//prints class list
-                                Pair[] arr = Pair.getRep_FelixCatriona(pairing);
-                                for (int i = 0 ; i < arr.length; i++){
-                                    System.out.println(arr[i].getKey()+" - "+arr[i].getValue());
-                                }
-                                break; //if user input a correct value, break out of the while loop
+                        if (stringInput.equals("n")){
+                                break; //if user input a correct value of "n", break out of the while loop
                             }
                     }
-                    if (stringInput.equals("n")){ //checks for 
-                        System.out.println("\nHere is the list of the class-reps.....");
-                        Pair[] arr = Pair.getRep_FelixCatriona(pairing);
+                    if (stringInput.equals("n")){  
+                        System.out.println("\nHere is the list of the class-reps.....");//prints the class reps 
+                        Pair[] arr = Pair.getRep_FelixCatriona(pairing);//create an array of Pair objects of year representatives 
                         for (int i = 0 ; i < arr.length; i++){
-                            System.out.println(arr[i].getKey()+" - "+arr[i].getValue());
+                            System.out.println(arr[i].getKey()+" - "+arr[i].getValue()); //prints out the year and names of student representatives
                         }
                         break; //if user input a correct value, break out of the while loop
                     }
-                    System.out.print("\nFrom which year you are looking for the names of the student leaders: ");
+                    System.out.print("\nFrom which year you are looking for the names of the student leaders: ");//continues asking user for names of student leaders
                    
                 }else{
                     throw new Exception();
@@ -76,18 +69,18 @@ public class Tester {
 
             }
             catch (Exception e){
-                System.out.print("\nInvalid Entry! Enter a valid number between 2 and 4: ");
-                scan.nextLine();
+                System.out.print("\nInvalid Entry! Enter a valid number between 2 and 4: "); //exception if integer value is incorrect
+                scan.nextLine(); //clears buffer
             }
             
         }
-        printFooter();
+        printFooter();//prints the footer
        }
 
    //when called will print the header
    public static void printHeader (){
         System.out.println("\n*******************************************************\n" +
-            "Names: Felix and Catriona.\n"+
+            "Names: Felix Zheng and Catriona Chan.\n"+
             "Student Numbers: 251167970 and 251135537\n" +
             "Goal of this project: Create a data structure that will keep a record of keys and values\n" +
             "the keys and values would be the year number and names of the student leaders in the university student council.\n"+

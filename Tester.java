@@ -64,7 +64,7 @@ public class Tester {
                     System.out.print("\nFrom which year you are looking for the names of the student leaders: ");//continues asking user for names of student leaders
                    
                 }else{
-                    throw new Exception();
+                    throw new Exception(); //wrong input, throw new exception for the catch block
                 }
 
             }

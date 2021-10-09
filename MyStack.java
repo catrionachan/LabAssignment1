@@ -4,7 +4,7 @@ public class MyStack <E>{
     private Object[] objectArray;
     private int length;
 
-    //constructor to creat stack with given length
+    //constructor to create stack with given length
     public MyStack(int length){
         objectArray = new Object[length];
     }
@@ -19,7 +19,7 @@ public class MyStack <E>{
         return true;
     }
 
-    //method returns the top stack value
+    //method returns the top stack value without removing it
     public E peek(){
         
         return (E) objectArray[objectArray.length - 1];
@@ -47,7 +47,7 @@ public class MyStack <E>{
         return anyName;
     } 
     
-    //method searches in stack for value and returns the value's position in stack 
+    //method searches in stack for value and returns the value's position in the stack 
     public int search(Object anyName){
         int counter =0;
         for (int i=objectArray.length -1;i>=0; i--){
@@ -59,7 +59,7 @@ public class MyStack <E>{
         return counter;
     } 
     
-    //String method to format values of stack
+    //over-ridden toString method to format values of stack
     public String toString(){
         if (empty()==true) {
             return "The stack is Empty! The stack: " + Arrays.toString(objectArray);

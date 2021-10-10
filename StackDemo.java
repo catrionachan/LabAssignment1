@@ -14,7 +14,7 @@ public class StackDemo{
        System.out.println("Searching for studentNumber1....");
        String distance = (stack.search("251135537")) +""; //searches for student number in stack
        System.out.println("The item has been found in distance "+distance+" with reference to the top"); //prints out the position where student number is found
-       int studentNum= Integer.parseInt("251135537");//parse the string value into an integer number
+       int studentNum= Integer.parseInt(array[(array.length)-Integer.parseInt(distance)]);//parse the string value of the stuent number into an integer number
        int lastNum = studentNum%10; //gets the last number of the studentNum variable
        int firstNum = studentNum/100000000; //gets the first number in the studentNum variable
        System.out.println("The first number in the student ID is "+firstNum); // prints out the first number in studentNum variable
